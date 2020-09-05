@@ -17,4 +17,10 @@ describe('Config', () => {
     expect(config.logger).to.have.property('maxSize')
     expect(config.logger).to.have.property('maxFiles')
   })
+
+  it('sets default values for keys', () => {
+    expect(config).to.have.property('keys')
+    expect(config.keys).to.have.property('openweatherAPI')
+    expect(config.keys).to.have.property('openweatherAPIKey')
+  })
 })
