@@ -69,7 +69,7 @@ When reports are created, `coverage/lcov-report/index.html` can be opened in a w
 
 ### Performance Tests
 
-Run performance tests:
+With the service also running, run performance tests:
 
 ```console
 npm run test:performance

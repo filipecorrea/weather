@@ -1,22 +1,9 @@
 scenarios:
-  - name: "Post data"
-    flow:
-      - post:
-          url: "/data"
-  - name: "Get data"
+  - name: "Get cities"
     flow:
       - get:
-          url: "/data"
-  - name: "Get data by id"
+          url: "/cities?lat=49.48&lon=8.46"
+  - name: "Get city by id"
     flow:
       - get:
-          url: "/data/1"
-  - name: "Update data"
-    flow:
-      - put:
-          url: "/data/1"
-  - name: "Delete data"
-    flow:
-      - delete:
-          url: "/data/1"
-  
+          url: "/cities/2873891"
