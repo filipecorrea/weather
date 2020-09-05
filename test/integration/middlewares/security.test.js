@@ -2,6 +2,10 @@ const chai = require('chai')
 const chaiHttp = require('chai-http')
 chai.use(chaiHttp)
 const expect = chai.expect
+const faker = require('faker')
+
+// Required environment variables
+process.env.OPENWEATHER_API_KEY = faker.random.alphaNumeric()
 
 const server = require('src/server')
 let headers
