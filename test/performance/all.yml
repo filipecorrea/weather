@@ -1,0 +1,22 @@
+scenarios:
+  - name: "Post data"
+    flow:
+      - post:
+          url: "/data"
+  - name: "Get data"
+    flow:
+      - get:
+          url: "/data"
+  - name: "Get data by id"
+    flow:
+      - get:
+          url: "/data/1"
+  - name: "Update data"
+    flow:
+      - put:
+          url: "/data/1"
+  - name: "Delete data"
+    flow:
+      - delete:
+          url: "/data/1"
+  
