@@ -4,7 +4,7 @@ chai.use(chaiHttp)
 const expect = chai.expect
 
 const server = require('src/server')
-const cities = require('src/data/cities')
+const cities = require('data/cities')
 
 describe('Routes: GET cities', () => {
   it('returns cities', done => {

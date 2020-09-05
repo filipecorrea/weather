@@ -3,7 +3,7 @@ const chai = require('chai')
 const expect = chai.expect
 const sinon = require('sinon')
 chai.use(require('sinon-chai'))
-const cities = require('src/data/cities')
+const cities = require('data/cities')
 const get = require('src/routes/cities/get')
 const BadRequestError = require('src/errors/bad-request')
 const NotFoundError = require('src/errors/not-found')

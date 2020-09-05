@@ -1,4 +1,4 @@
-const cities = require('src/data/cities')
+const cities = require('data/cities')
 const City = require('src/models/city')
 const NotFoundError = require('src/errors/not-found')
 

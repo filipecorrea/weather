@@ -1,5 +1,5 @@
 const geolib = require('geolib')
-const cities = require('src/data/cities')
+const cities = require('data/cities')
 
 module.exports = (latitude, longitude) => {
   const origin = { latitude, longitude }

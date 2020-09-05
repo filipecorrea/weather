@@ -3,7 +3,7 @@ const chai = require('chai')
 const expect = chai.expect
 const sinon = require('sinon')
 chai.use(require('sinon-chai'))
-const cities = require('src/data/cities')
+const cities = require('data/cities')
 const weather = require('src/services/weather')
 const get = require('src/routes/weather/get')
 const BadRequestError = require('src/errors/bad-request')
