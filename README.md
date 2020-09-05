@@ -1,12 +1,15 @@
-# Node
+# Weather
 
-Node.js application template with security enhancements, log rotation and localization.
+REST based service to retrieve information about the weather in different cities using [OpenWeather](https://openweathermap.org) data.
 
-Optionally, this application and all the different tests can be [build and run in Docker](https://github.com/filipecorrea/node/wiki/Build-and-Run-in-Docker).
+[Download the list of available cities](http://bulk.openweathermap.org/sample/city.list.json.gz)
 
 ## Prerequisites
 
 - [Node.js](https://nodejs.org)
+- [OpenWeather API key](https://home.openweathermap.org/api_keys)
+
+Optionally, this service and all the different tests can be [build and run in Docker](https://github.com/filipecorrea/weather/wiki/Build-and-Run-in-Docker).
 
 ## Setup
 
@@ -16,9 +19,15 @@ Install project dependencies:
 npm install
 ```
 
+Create an `.env` file and set the [OpenWeather API key](https://home.openweathermap.org/api_keys) by replacing `<OPENWEATHER_API_KEY_VALUE>`:
+
+```.env
+OPENWEATHER_API_KEY=<OPENWEATHER_API_KEY_VALUE>
+```
+
 ### Customize
 
-Create an `.env` file to start the application in [cluster mode](https://nodejs.org/api/cluster.html#cluster_cluster), change its running port, log level, directory and maximum size. The variable names and default values are:
+The same `.env` file can be used to start the service in [cluster mode](https://nodejs.org/api/cluster.html#cluster_cluster), change its running port, log level, directory and maximum size. The variable names and default values are:
 
 ```.env
 CLUSTER_MODE=false
@@ -32,7 +41,7 @@ LOG_MAX_FILES=7d
 
 ## Run
 
-Start the application:
+Start the service:
 
 ```console
 npm start
