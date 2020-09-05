@@ -1,7 +1,7 @@
 {
-  "name": "node",
+  "name": "weather",
   "version": "1.0.0",
-  "description": "Node.js application template",
+  "description": "Service to retrieve information about the weather using OpenWeather data.",
   "main": "src/index.js",
   "scripts": {
     "start": "NODE_PATH=. node src",
@@ -20,12 +20,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/filipecorrea/node.git"
+    "url": "git+https://github.com/filipecorrea/weather.git"
   },
   "keywords": [
-    "node",
-    "node.js",
-    "application"
+    "weather",
+    "rest",
+    "api",
+    "openweather"
   ],
   "author": {
     "name": "Filipe Correa",
@@ -34,9 +35,9 @@
   },
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/filipecorrea/node/issues"
+    "url": "https://github.com/filipecorrea/weather/issues"
   },
-  "homepage": "https://github.com/filipecorrea/node#readme",
+  "homepage": "https://github.com/filipecorrea/weather#readme",
   "dependencies": {
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
