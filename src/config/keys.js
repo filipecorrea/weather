@@ -7,7 +7,6 @@ const schema = joi.object({
     .default('https://api.openweathermap.org/data/2.5/weather'),
   OPENWEATHER_API_KEY: joi.string()
     .alphanum()
-    .required()
 }).unknown()
 
 const { error, value: env } = schema.validate(process.env)

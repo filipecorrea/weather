@@ -1,9 +1,5 @@
 const chai = require('chai')
 const expect = chai.expect
-const faker = require('faker')
-
-// Required environment variables
-process.env.OPENWEATHER_API_KEY = faker.random.alphaNumeric()
 
 const config = require('src/config')
 
