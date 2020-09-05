@@ -1,10 +1,10 @@
 FROM node:12-alpine
 
-COPY source source
+COPY src src
 COPY package.json .
 COPY package-lock.json .
 
-RUN npm ci
+RUN npm ci --production
 
 EXPOSE 3000
 
