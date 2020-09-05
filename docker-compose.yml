@@ -3,14 +3,14 @@ version: '2.4'
 services:
   node: &node
     image: node:12-alpine
-    container_name: node_node
+    container_name: weather_node
     volumes:
       - ./:/node
     working_dir: /node
 
   api:
     <<: *node
-    container_name: node_api
+    container_name: weather_api
     cpu_shares: 512
     mem_limit: 512m
     memswap_limit: 512m
@@ -21,32 +21,32 @@ services:
 
   style:
     <<: *node
-    container_name: node_api_test_style
+    container_name: weather_api_test_style
     command: npm run test:style
 
   unit:
     <<: *node
-    container_name: node_api_test_unit
+    container_name: weather_api_test_unit
     command: npm run test:unit
 
   integration:
     <<: *node
-    container_name: node_api_test_integration
+    container_name: weather_api_test_integration
     command: npm run test:integration
 
   performance:
     <<: *node
-    container_name: node_api_test_performance
+    container_name: weather_api_test_performance
     depends_on:
       - api
     command: npm run test:performance -- -e docker
 
   cover:
     <<: *node
-    container_name: node_api_test_cover
+    container_name: weather_api_test_cover
     command: npm run cover
   
   security:
     <<: *node
-    container_name: node_api_test_security
+    container_name: weather_api_test_security
     command: npm run test:security
