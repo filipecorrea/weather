@@ -16,6 +16,7 @@ describe('Routes: Cities', () => {
         return methods
       }, {})
 
+    expect(methods['/cities']).to.deep.equal(['GET'])
     expect(methods['/cities/:id']).to.deep.equal(['GET'])
   })
 })
