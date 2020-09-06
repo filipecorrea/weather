@@ -1,6 +1,6 @@
-const chai = require('chai')
-const expect = chai.expect
-const faker = require('faker')
+import { expect } from 'chai'
+
+import faker from 'faker'
 const InvalidParameterError = require('../../../src/errors/invalid-parameter')
 const localization = require('../../../src/localization')
 

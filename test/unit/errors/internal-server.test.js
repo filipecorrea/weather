@@ -1,6 +1,6 @@
-const chai = require('chai')
-const expect = chai.expect
-const httpStatus = require('http-status')
+import { expect } from 'chai'
+
+import httpStatus from 'http-status'
 const InternalServerError = require('../../../src/errors/internal-server')
 const localization = require('../../../src/localization')
 

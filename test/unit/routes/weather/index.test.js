@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-expressions */
-const chai = require('chai')
-const expect = chai.expect
+import { expect } from 'chai'
 const routes = require('../../../../src/routes').api
 const listEndpoints = require('express-list-endpoints')
 

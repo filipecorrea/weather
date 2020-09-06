@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-expressions */
-const chai = require('chai')
-const expect = chai.expect
-const sinon = require('sinon')
+import chai, { expect } from 'chai'
+import sinon from 'sinon'
 chai.use(require('sinon-chai'))
 const cities = require('../../../../data/cities')
 const get = require('../../../../src/routes/cities/get')

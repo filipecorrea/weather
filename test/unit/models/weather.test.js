@@ -1,5 +1,5 @@
-const chai = require('chai')
-const expect = chai.expect
+import { expect } from 'chai'
+
 const Weather = require('../../../src/models/weather')
 
 describe('Models: Weather', () => {

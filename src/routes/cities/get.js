@@ -21,7 +21,7 @@
  *                $ref: '#/components/schemas/City'
  */
 
-const joi = require('joi')
+import joi from 'joi'
 const cities = require('../../services/cities')
 const BadRequestError = require('../../errors/bad-request')
 

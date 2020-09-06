@@ -1,7 +1,7 @@
-const chai = require('chai')
-const chaiHttp = require('chai-http')
+import chai, { expect } from 'chai'
+
+import chaiHttp from 'chai-http'
 chai.use(chaiHttp)
-const expect = chai.expect
 
 const server = require('../../../src/server')
 let headers

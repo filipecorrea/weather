@@ -1,6 +1,7 @@
-require('dotenv').config()
+import joi from 'joi'
+import dotenv from 'dotenv'
 
-const joi = require('joi')
+dotenv.config()
 
 const schema = joi.object({
   /*

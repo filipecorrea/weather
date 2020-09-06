@@ -1,10 +1,9 @@
 /* eslint-disable no-unused-expressions */
-const chai = require('chai')
-const expect = chai.expect
-const sinon = require('sinon')
+import chai, { expect } from 'chai'
+import httpStatus from 'http-status'
+import sinon from 'sinon'
+import faker from 'faker'
 chai.use(require('sinon-chai'))
-const faker = require('faker')
-const httpStatus = require('http-status')
 const errorMiddleware = require('../../../src/middlewares/error')
 
 describe('Middlewares: Error', () => {

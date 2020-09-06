@@ -1,5 +1,4 @@
-const chai = require('chai')
-const expect = chai.expect
+import { expect } from 'chai'
 const server = require('../../src/server')
 
 describe('Server', () => {

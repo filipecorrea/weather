@@ -1,8 +1,7 @@
 /* eslint-disable no-unused-expressions */
-const chai = require('chai')
-const expect = chai.expect
+import { expect } from 'chai'
+import listEndpoints from 'express-list-endpoints'
 const routes = require('../../../../src/routes').api
-const listEndpoints = require('express-list-endpoints')
 
 describe('Routes: Cities', () => {
   it('exports an express router', () => {

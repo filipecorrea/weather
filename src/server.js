@@ -1,4 +1,4 @@
-const express = require('express')
+import express from 'express'
 
 const config = require('./config/server')
 const logger = require('./logger')

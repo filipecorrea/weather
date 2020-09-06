@@ -1,4 +1,4 @@
-const httpStatus = require('http-status')
+import httpStatus from 'http-status'
 const localization = require('../localization')
 
 class MissingParameterError extends Error {

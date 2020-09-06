@@ -21,7 +21,7 @@
  *                $ref: '#/components/schemas/Weather'
  */
 
-const joi = require('joi')
+import joi from 'joi'
 const weather = require('../../services/weather')
 const BadRequestError = require('../../errors/bad-request')
 

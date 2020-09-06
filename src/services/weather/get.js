@@ -1,4 +1,4 @@
-const axios = require('axios')
+import axios from 'axios'
 
 const config = require('../../config/keys')
 const Weather = require('../../models/weather')

@@ -1,8 +1,8 @@
 /* eslint-disable no-template-curly-in-string */
 
-const chai = require('chai')
-const expect = chai.expect
-const faker = require('faker')
+import { expect } from 'chai'
+
+import faker from 'faker'
 const compile = require('../../../src/localization/compile')
 
 const randomName = faker.name.firstName()

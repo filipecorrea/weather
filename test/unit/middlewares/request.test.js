@@ -1,9 +1,8 @@
 /* eslint-disable no-unused-expressions */
-const chai = require('chai')
-const expect = chai.expect
-const sinon = require('sinon')
+import chai, { expect } from 'chai'
+import sinon from 'sinon'
+import faker from 'faker'
 chai.use(require('sinon-chai'))
-const faker = require('faker')
 const requestMiddleware = require('../../../src/middlewares/request')
 
 describe('Middlewares: Request', () => {
