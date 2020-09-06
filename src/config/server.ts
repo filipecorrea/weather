@@ -10,7 +10,10 @@ const schema = joi.object({
    * to launch a cluster of Node.js processes to handle the load.
    */
   CLUSTER_MODE: joi.boolean()
-    .truthy('TRUE').truthy('true').falsy('FALSE').falsy('false')
+    .truthy('true')
+    .truthy('TRUE')
+    .falsy('false')
+    .falsy('FALSE')
     .default(false),
   PORT: joi.number()
     .port()

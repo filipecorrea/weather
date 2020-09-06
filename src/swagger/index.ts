@@ -1,20 +1,22 @@
 import swaggerJsdoc from 'swagger-jsdoc'
 import paths from './paths'
 
+const project = require('../../package.json')
+
 const options = {
   swaggerDefinition: {
     openapi: '3.0.0',
     info: {
-      title: `${capitalizeFirstLetter(require('../../package.json').name)} API`,
-      version: require('../../package.json').version,
-      description: require('../../package.json').description
+      title: `${capitalizeFirstLetter(project.name)} API`,
+      version: project.version,
+      description: project.description
     }
   },
   apis: paths
 }
 
-function capitalizeFirstLetter (string) {
-  return string[0].toUpperCase() + string.slice(1)
+function capitalizeFirstLetter (text: string) {
+  return text[0].toUpperCase() + text.slice(1)
 }
 
 export default swaggerJsdoc(options)

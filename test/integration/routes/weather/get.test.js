@@ -14,5 +14,5 @@ describe('Routes: GET cities/{:id}/weather', () => {
         expect(res).to.have.status(401)
         done()
       })
-  })
+  }).timeout(5000)
 })

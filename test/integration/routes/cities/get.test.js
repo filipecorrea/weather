@@ -6,7 +6,7 @@ import server from '../../../../src/server'
 chai.use(chaiHttp)
 
 describe('Routes: GET cities/{:id}', () => {
-  it('returns cities', done => {
+  it('returns city', done => {
     chai.request(server)
       .get(`/cities/${cities[0].id}`)
       .end((err, res) => {

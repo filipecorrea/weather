@@ -14,5 +14,5 @@ describe('Routes: GET cities', () => {
         expect(res).to.have.status(200)
         done()
       })
-  })
+  }).timeout(5000)
 })
