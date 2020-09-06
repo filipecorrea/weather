@@ -1,8 +1,11 @@
 import httpStatus from 'http-status'
 import localization from '../localization'
 
-class UnauthorizedError extends Error {
-  constructor (message) {
+export default class UnauthorizedError extends Error {
+  private statusCode: number
+  private description: string
+
+  constructor (message: string) {
     super(localization.errors.unauthorized())
     this.name = this.constructor.name
     this.statusCode = httpStatus.UNAUTHORIZED
@@ -10,5 +13,3 @@ class UnauthorizedError extends Error {
     Error.captureStackTrace(this, this.constructor)
   }
 }
-
-module.exports = UnauthorizedError

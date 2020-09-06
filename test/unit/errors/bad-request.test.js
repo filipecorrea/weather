@@ -1,8 +1,7 @@
 import { expect } from 'chai'
 import httpStatus from 'http-status'
 import localization from '../../../src/localization'
-
-const BadRequestError = require('../../../src/errors/bad-request')
+import BadRequestError from '../../../src/errors/bad-request'
 
 describe('Errors: Bad Request', () => {
   beforeEach(() => {

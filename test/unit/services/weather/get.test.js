@@ -1,13 +1,15 @@
 /* eslint-disable no-unused-expressions */
 import chai, { expect } from 'chai'
 import sinon from 'sinon'
-chai.use(require('sinon-chai'))
-const axios = require('axios')
+import axios from 'axios'
+import UnauthorizedError from '../../../../src/errors/unauthorized'
+import NotFoundError from '../../../../src/errors/not-found'
+import TooManyRequestsError from '../../../../src/errors/too-many-requests'
+import InternalServerError from '../../../../src/errors/internal-server'
+
 const get = require('../../../../src/services/weather/get')
-const UnauthorizedError = require('../../../../src/errors/unauthorized')
-const NotFoundError = require('../../../../src/errors/not-found')
-const TooManyRequestsError = require('../../../../src/errors/too-many-requests')
-const InternalServerError = require('../../../../src/errors/internal-server')
+
+chai.use(require('sinon-chai'))
 
 let getWeatherServiceStub
 let mockedAPIResponse

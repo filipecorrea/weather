@@ -2,10 +2,11 @@
 import chai, { expect } from 'chai'
 import sinon from 'sinon'
 import cities from '../../../../data/cities'
+import BadRequestError from '../../../../src/errors/bad-request'
+
+const query = require('../../../../src/routes/cities/query')
 
 chai.use(require('sinon-chai'))
-const query = require('../../../../src/routes/cities/query')
-const BadRequestError = require('../../../../src/errors/bad-request')
 
 describe('Routes: GET cities', () => {
   beforeEach(() => {

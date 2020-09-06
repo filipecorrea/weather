@@ -2,12 +2,13 @@
 import chai, { expect } from 'chai'
 import sinon from 'sinon'
 import cities from '../../../../data/cities'
+import BadRequestError from '../../../../src/errors/bad-request'
+import NotFoundError from '../../../../src/errors/not-found'
 
-chai.use(require('sinon-chai'))
 const weather = require('../../../../src/services/weather')
 const get = require('../../../../src/routes/weather/get')
-const BadRequestError = require('../../../../src/errors/bad-request')
-const NotFoundError = require('../../../../src/errors/not-found')
+
+chai.use(require('sinon-chai'))
 
 let getWeatherServiceStub
 const mockedData = {

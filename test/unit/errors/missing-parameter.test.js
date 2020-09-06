@@ -1,8 +1,7 @@
 import { expect } from 'chai'
 import faker from 'faker'
 import localization from '../../../src/localization'
-
-const MissingParameterError = require('../../../src/errors/missing-parameter')
+import MissingParameterError from '../../../src/errors/missing-parameter'
 
 const randomParameter = faker.lorem.word()
 

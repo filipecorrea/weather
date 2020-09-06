@@ -22,8 +22,9 @@
  */
 
 import joi from 'joi'
+import BadRequestError from '../../errors/bad-request'
+
 const weather = require('../../services/weather')
-const BadRequestError = require('../../errors/bad-request')
 
 module.exports = (req, res, next) => {
   const { error, value } = schema.validate(req.params)

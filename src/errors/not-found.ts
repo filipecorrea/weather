@@ -1,13 +1,13 @@
 import httpStatus from 'http-status'
 import localization from '../localization'
 
-class InternalServerError extends Error {
+export default class NotFoundError extends Error {
+  private statusCode: number
+
   constructor () {
-    super(localization.errors.internalServer())
+    super(localization.errors.notFound())
     this.name = this.constructor.name
-    this.statusCode = httpStatus.INTERNAL_SERVER_ERROR
+    this.statusCode = httpStatus.NOT_FOUND
     Error.captureStackTrace(this, this.constructor)
   }
 }
-
-module.exports = InternalServerError

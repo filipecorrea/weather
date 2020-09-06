@@ -1,8 +1,7 @@
 import { expect } from 'chai'
 import httpStatus from 'http-status'
 import localization from '../../../src/localization'
-
-const InternalServerError = require('../../../src/errors/internal-server')
+import InternalServerError from '../../../src/errors/internal-server'
 
 describe('Errors: Internal Server', () => {
   beforeEach(() => {
