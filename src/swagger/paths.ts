@@ -13,4 +13,4 @@ function getFiles (dir, filelist = []) {
   return filelist
 }
 
-module.exports = getFiles(models).concat(getFiles(routes))
+export default getFiles(models).concat(getFiles(routes))

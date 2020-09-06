@@ -1,6 +1,5 @@
 import swaggerJsdoc from 'swagger-jsdoc'
-
-const paths = require('./paths')
+import paths from './paths'
 
 const options = {
   swaggerDefinition: {
@@ -18,4 +17,4 @@ function capitalizeFirstLetter (string) {
   return string[0].toUpperCase() + string.slice(1)
 }
 
-module.exports = swaggerJsdoc(options)
+export default swaggerJsdoc(options)

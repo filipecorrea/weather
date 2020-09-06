@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-const swaggerSpec = require('../../../src/swagger')
+import swaggerSpec from '../../../src/swagger'
 
 describe('Swagger', () => {
   it('sets base config', () => {
