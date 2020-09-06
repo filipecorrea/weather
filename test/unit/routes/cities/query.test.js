@@ -1,8 +1,9 @@
 /* eslint-disable no-unused-expressions */
 import chai, { expect } from 'chai'
 import sinon from 'sinon'
+import cities from '../../../../data/cities'
+
 chai.use(require('sinon-chai'))
-const cities = require('../../../../data/cities')
 const query = require('../../../../src/routes/cities/query')
 const BadRequestError = require('../../../../src/errors/bad-request')
 

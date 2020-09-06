@@ -1,5 +1,5 @@
-const cities = require('../../../data/cities')
-const City = require('../../models/city')
+import cities from '../../../data/cities'
+import City from '../../models/city'
 const NotFoundError = require('../../errors/not-found')
 
 module.exports = id => {

@@ -1,5 +1,5 @@
 import { getDistance } from 'geolib'
-const cities = require('../../../data/cities')
+import cities from '../../../data/cities'
 
 module.exports = (latitude, longitude) => {
   const origin = { latitude, longitude }

@@ -41,8 +41,20 @@
  *           wind_speed: 1.5
  */
 
-class Weather {
-  constructor (type, description, sunrise, sunset, temp, min, max, pressure, humidity, clouds, wind) {
+export default class Weather {
+  private type: string
+  private type_description: string
+  private sunrise: string
+  private sunset: string
+  private temp: number
+  private temp_min: number
+  private temp_max: number
+  private pressure: number
+  private humidity: number
+  private clouds_percent: number
+  private wind_speed: number
+
+  constructor (type: string, description: string, sunrise: string, sunset: string, temp: number, min: number, max: number, pressure: number, humidity: number, clouds: number, wind: number) {
     this.type = type
     this.type_description = description
     this.sunrise = sunrise
@@ -56,5 +68,3 @@ class Weather {
     this.wind_speed = wind
   }
 }
-
-module.exports = Weather

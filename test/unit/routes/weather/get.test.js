@@ -1,8 +1,9 @@
 /* eslint-disable no-unused-expressions */
 import chai, { expect } from 'chai'
 import sinon from 'sinon'
+import cities from '../../../../data/cities'
+
 chai.use(require('sinon-chai'))
-const cities = require('../../../../data/cities')
 const weather = require('../../../../src/services/weather')
 const get = require('../../../../src/routes/weather/get')
 const BadRequestError = require('../../../../src/errors/bad-request')

@@ -20,13 +20,16 @@
  *           lon: 8.46472
  */
 
-class City {
-  constructor (id, name, lat, lon) {
+export default class City {
+  private id: number
+  private name: string
+  private lat: number
+  private lon: number
+
+  constructor (id:number, name: string, lat: number, lon: number) {
     this.id = id
     this.name = name
     this.lat = lat
     this.lon = lon
   }
 }
-
-module.exports = City

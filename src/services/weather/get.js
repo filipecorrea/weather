@@ -1,7 +1,7 @@
 import axios from 'axios'
+import Weather from '../../models/weather'
 
 const config = require('../../config/keys')
-const Weather = require('../../models/weather')
 const UnauthorizedError = require('../../errors/unauthorized')
 const NotFoundError = require('../../errors/not-found')
 const TooManyRequestsError = require('../../errors/too-many-requests')
