@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-expressions */
 import { expect } from 'chai'
-const routes = require('../../../../src/routes').api
-const listEndpoints = require('express-list-endpoints')
+import listEndpoints from 'express-list-endpoints'
+import routes from '../../../../src/routes'
 
 describe('Routes: Weather', () => {
   it('exports an express router', () => {

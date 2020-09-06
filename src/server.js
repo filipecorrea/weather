@@ -1,21 +1,20 @@
 import express from 'express'
+import config from './config/server'
+import logger from './logger'
 import security from './middlewares/security'
 import request from './middlewares/request'
 import response from './middlewares/response'
 import error from './middlewares/error'
-import config from './config/server'
-import logger from './logger'
-
-const routes = require('./routes')
+import routes, { swagger } from './routes'
 
 const server = express()
 
 server.use(express.json())
 server.use(express.urlencoded({ extended: false }))
 server.use(security)
-server.use(routes.swagger)
+server.use(swagger)
 server.use(request)
-server.use(routes.api)
+server.use(routes)
 server.use(error)
 server.use(response)
 

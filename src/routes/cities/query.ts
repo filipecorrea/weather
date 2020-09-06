@@ -29,12 +29,18 @@
  *                  $ref: '#/components/schemas/City'
  */
 
+import { Request, Response } from 'express'
 import joi from 'joi'
 import BadRequestError from '../../errors/bad-request'
 
 const cities = require('../../services/cities')
 
-module.exports = (req, res, next) => {
+const schema = joi.object({
+  lat: joi.number().min(-90).max(90).required(),
+  lon: joi.number().min(-180).max(180).required()
+})
+
+export default (req: Request, res: Response, next: Function) => {
   const { error, value } = schema.validate(req.query)
 
   if (error) throw new BadRequestError(error.message)
@@ -43,8 +49,3 @@ module.exports = (req, res, next) => {
 
   next(null, req, res)
 }
-
-const schema = joi.object({
-  lat: joi.number().min(-90).max(90).required(),
-  lon: joi.number().min(-180).max(180).required()
-})

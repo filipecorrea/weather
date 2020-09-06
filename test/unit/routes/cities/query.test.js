@@ -1,12 +1,12 @@
 /* eslint-disable no-unused-expressions */
 import chai, { expect } from 'chai'
 import sinon from 'sinon'
+import sinonChai from 'sinon-chai'
 import cities from '../../../../data/cities'
+import query from '../../../../src/routes/cities/query'
 import BadRequestError from '../../../../src/errors/bad-request'
 
-const query = require('../../../../src/routes/cities/query')
-
-chai.use(require('sinon-chai'))
+chai.use(sinonChai)
 
 describe('Routes: GET cities', () => {
   beforeEach(() => {

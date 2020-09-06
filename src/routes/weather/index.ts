@@ -5,11 +5,12 @@
  *   description: Weather information
  */
 
-const express = require('express')
+import express from 'express'
+import get from './get'
+
 const router = express.Router()
-const methods = require('requireindex')(__dirname)
 
 router.route('/cities/:id/weather')
-  .get(methods.get)
+  .get(get)
 
-module.exports = router
+export default router

@@ -1,14 +1,15 @@
 /* eslint-disable no-unused-expressions */
 import chai, { expect } from 'chai'
 import sinon from 'sinon'
+import sinonChai from 'sinon-chai'
 import cities from '../../../../data/cities'
+import get from '../../../../src/routes/weather/get'
 import BadRequestError from '../../../../src/errors/bad-request'
 import NotFoundError from '../../../../src/errors/not-found'
 
 const weather = require('../../../../src/services/weather')
-const get = require('../../../../src/routes/weather/get')
 
-chai.use(require('sinon-chai'))
+chai.use(sinonChai)
 
 let getWeatherServiceStub
 const mockedData = {

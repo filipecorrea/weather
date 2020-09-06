@@ -6,4 +6,4 @@ const router = express.Router()
 
 router.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 
-module.exports = router
+export default router

@@ -1,13 +1,13 @@
 /* eslint-disable no-unused-expressions */
 import chai, { expect } from 'chai'
 import sinon from 'sinon'
+import sinonChai from 'sinon-chai'
 import cities from '../../../../data/cities'
+import get from '../../../../src/routes/cities/get'
 import BadRequestError from '../../../../src/errors/bad-request'
 import NotFoundError from '../../../../src/errors/not-found'
 
-const get = require('../../../../src/routes/cities/get')
-
-chai.use(require('sinon-chai'))
+chai.use(sinonChai)
 
 describe('Routes: GET cities/{:id}', () => {
   beforeEach(() => {

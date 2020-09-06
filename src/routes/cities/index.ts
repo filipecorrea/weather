@@ -5,14 +5,16 @@
  *   description: Cities information
  */
 
-const express = require('express')
+import express from 'express'
+import get from './get'
+import query from './query'
+
 const router = express.Router()
-const methods = require('requireindex')(__dirname)
 
 router.route('/cities')
-  .get(methods.query)
+  .get(query)
 
 router.route('/cities/:id')
-  .get(methods.get)
+  .get(get)
 
-module.exports = router
+export default router
