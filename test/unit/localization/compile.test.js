@@ -8,30 +8,28 @@ const randomSentence = faker.lorem.sentence()
 const randomWord = faker.lorem.word()
 
 describe('Localization', () => {
-  before(() => {
-    this.compiled = compile({
-      hello: 'Hello, ${person}!',
-      sentence: randomSentence,
-      one: {
-        two: {
-          three: '${word}'
-        }
+  const compiled = compile({
+    hello: 'Hello, ${person}!',
+    sentence: randomSentence,
+    one: {
+      two: {
+        three: '${word}'
       }
-    })
+    }
   })
 
   it('compiles template', () => {
-    const subject = this.compiled.hello({ person: randomName })
+    const subject = compiled.hello({ person: randomName })
     expect(subject).to.equal(`Hello, ${randomName}!`)
   })
 
   it('compiles multi level templates', () => {
-    const subject = this.compiled.one.two.three({ word: randomWord })
+    const subject = compiled.one.two.three({ word: randomWord })
     expect(subject).to.equal(randomWord)
   })
 
   it('compiles text', () => {
-    const subject = this.compiled.sentence()
+    const subject = compiled.sentence()
     expect(subject).to.equal(randomSentence)
   })
 })

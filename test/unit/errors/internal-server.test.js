@@ -1,26 +1,24 @@
 import { expect } from 'chai'
-import httpStatus from 'http-status'
+import status from 'http-status'
 import localization from '../../../src/localization'
 import InternalServerError from '../../../src/errors/internal-server'
 
 describe('Errors: Internal Server', () => {
-  beforeEach(() => {
-    this.error = new InternalServerError()
-  })
+  const error = new InternalServerError()
 
   it('extends from Error', () => {
-    expect(this.error).to.be.instanceof(Error)
+    expect(error).to.be.instanceof(Error)
   })
 
   it('sets error name from constructor', () => {
-    expect(this.error.name).to.be.equal('InternalServerError')
+    expect(error.name).to.be.equal('InternalServerError')
   })
 
   it('sets error message', () => {
-    expect(this.error.message).to.be.equal(localization.errors.internalServer())
+    expect(error.message).to.be.equal(localization.errors.internalServer())
   })
 
   it('sets error status code to not found', () => {
-    expect(this.error.statusCode).to.be.equal(httpStatus.INTERNAL_SERVER_ERROR)
+    expect(error.statusCode).to.be.equal(status.INTERNAL_SERVER_ERROR)
   })
 })
