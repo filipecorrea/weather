@@ -30,7 +30,7 @@ describe('Routes: GET cities', () => {
         id: cities[0].id,
         name: cities[0].name
       })
-    })
+    }).timeout(5000)
 
     it('continues the request pipeline', () => {
       expect(this.nextStub).to.have.been.called

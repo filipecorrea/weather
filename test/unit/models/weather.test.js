@@ -1,27 +1,27 @@
 const chai = require('chai')
-const expect = chai.expect
+const faker = require('faker')
 const Weather = require('src/models/weather')
 
+const expect = chai.expect
+
 describe('Models: Weather', () => {
-  beforeEach(() => {
-    this.mockedData = {
-      type: 'Clouds',
-      type_description: 'broken clouds',
-      sunrise: 1599281303,
-      sunset: 1599328893,
-      temp: 295.63,
-      temp_min: 295.15,
-      temp_max: 295.93,
-      pressure: 1018,
-      humidity: 56,
-      clouds_percent: 75,
-      wind_speed: 2.6
-    }
-  })
+  const mockedData = {
+    type: faker.lorem.word(),
+    type_description: faker.lorem.words(),
+    sunrise: faker.random.number(),
+    sunset: faker.random.number(),
+    temp: faker.random.number(),
+    temp_min: faker.random.number(),
+    temp_max: faker.random.number(),
+    pressure: faker.random.number(),
+    humidity: faker.random.number(),
+    clouds_percent: faker.random.number(),
+    wind_speed: faker.random.number()
+  }
 
   it('creates a weather object', () => {
-    const values = Object.values(this.mockedData)
-    this.weather = new Weather(...values)
-    expect(this.weather).to.be.deep.equal(this.mockedData)
+    const values = Object.values(mockedData)
+    const weather = new Weather(...values)
+    expect(weather).to.be.deep.equal(mockedData)
   })
 })

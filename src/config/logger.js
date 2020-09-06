@@ -4,7 +4,10 @@ const joi = require('joi')
 
 const schema = joi.object({
   LOG_ENABLED: joi.boolean()
-    .truthy('TRUE').truthy('true').falsy('FALSE').falsy('false')
+    .truthy('true')
+    .truthy('TRUE')
+    .falsy('false')
+    .falsy('FALSE')
     .default(true),
   LOG_LEVEL: joi.string()
     .equal('error', 'warn', 'info', 'verbose', 'debug', 'silly')

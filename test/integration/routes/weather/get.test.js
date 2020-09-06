@@ -7,13 +7,13 @@ const expect = chai.expect
 
 chai.use(chaiHttp)
 
-describe('Routes: GET cities', () => {
-  it('returns cities', done => {
+describe('Routes: GET cities/{:id}/weather', () => {
+  it('returns unauthorized', done => {
     chai.request(server)
-      .get(`/cities?lat=${cities[0].coord.lat}&lon=${cities[0].coord.lon}`)
+      .get(`/cities/${cities[0].id}/weather`)
       .end((err, res) => {
         expect(err).to.be.equal(null)
-        expect(res).to.have.status(200)
+        expect(res).to.have.status(401)
         done()
       })
   }).timeout(5000)

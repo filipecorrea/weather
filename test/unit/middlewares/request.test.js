@@ -2,9 +2,11 @@
 const chai = require('chai')
 const expect = chai.expect
 const sinon = require('sinon')
-chai.use(require('sinon-chai'))
+const sinonChai = require('sinon-chai')
 const faker = require('faker')
 const requestMiddleware = require('src/middlewares/request')
+
+chai.use(sinonChai)
 
 describe('Middlewares: Request', () => {
   beforeEach(() => {
@@ -16,13 +18,13 @@ describe('Middlewares: Request', () => {
       }
     }
     this.res = {}
-    this.nextStub = sinon.stub()
+    this.next = sinon.stub()
   })
 
   describe('when processing request', () => {
     it('continues the request pipeline', () => {
-      requestMiddleware(this.req, this.res, this.nextStub)
-      expect(this.nextStub).to.have.been.called
+      requestMiddleware(this.req, this.res, this.next)
+      expect(this.next).to.have.been.called
     })
   })
 })

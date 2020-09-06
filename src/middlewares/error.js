@@ -1,4 +1,4 @@
-const httpStatus = require('http-status')
+const status = require('http-status')
 const logger = require('src/logger')
 
 function error (err, req, res, next) {
@@ -6,7 +6,7 @@ function error (err, req, res, next) {
 
   if (unknownError) logger.error('Unknown', err)
 
-  res.statusCode = err.statusCode || httpStatus.INTERNAL_SERVER_ERROR
+  res.statusCode = err.statusCode || status.INTERNAL_SERVER_ERROR
   res.locals = err
 
   next(null, req, res)

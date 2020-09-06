@@ -1,6 +1,7 @@
 const chai = require('chai')
-const expect = chai.expect
 const swaggerSpec = require('src/swagger')
+
+const expect = chai.expect
 
 describe('Swagger', () => {
   it('sets base config', () => {

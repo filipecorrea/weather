@@ -1,14 +1,14 @@
 const swaggerJsdoc = require('swagger-jsdoc')
-
 const paths = require('src/swagger/paths')
+const project = require('package.json')
 
 const options = {
   swaggerDefinition: {
     openapi: '3.0.0',
     info: {
-      title: `${capitalizeFirstLetter(require('package.json').name)} API`,
-      version: require('package.json').version,
-      description: require('package.json').description
+      title: `${capitalizeFirstLetter(project.name)} API`,
+      version: project.version,
+      description: project.description
     }
   },
   apis: paths
