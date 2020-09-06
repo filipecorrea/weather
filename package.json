@@ -2,14 +2,16 @@
   "name": "weather",
   "version": "1.0.0",
   "description": "Service to retrieve information about the weather using OpenWeather data.",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "start": "NODE_PATH=. node src",
-    "dev": "NODE_PATH=. NODE_ENV=dev nodemon src",
+    "build": "tsc",
+    "prestart": "npm run build",
+    "start": "NODE_ENV=dev node .",
+    "dev": "NODE_ENV=dev nodemon src",
     "test": "npm run test:style && npm run test:unit && npm run test:integration && npm run test:security",
-    "test:style": "standard",
-    "test:unit": "NODE_PATH=. nyc _mocha --exit 'test/unit/**/*.test.js'",
-    "test:integration": "NODE_PATH=. mocha --exit 'test/integration/**/*.test.js'",
+    "test:style": "standardx",
+    "test:unit": "nyc _mocha --exit 'test/unit/**/*.test.js'",
+    "test:integration": "mocha --exit 'test/integration/**/*.test.js'",
     "test:security": "npm audit --production --audit-level=moderate",
     "test:performance": "artillery run -c test/performance/config.yml test/performance/all.yml -o logs/performance.log",
     "cover": "npm run cover:unit && npm run cover:integration && npm run cover:report",
@@ -54,6 +56,8 @@
     "winston-daily-rotate-file": "^4.5.0"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.0.1",
+    "@typescript-eslint/parser": "^4.0.1",
     "artillery": "^1.6.1",
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
@@ -64,12 +68,25 @@
     "nyc": "^15.1.0",
     "sinon": "^9.0.2",
     "sinon-chai": "^3.5.0",
-    "standard": "^14.3.4"
+    "standardx": "^5.0.0",
+    "typescript": "^4.0.2"
   },
-  "standard": {
+  "standardx": {
     "env": [
       "mocha"
-    ]
+    ],
+    "eslintConfig": {
+      "rules": {
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": "error"
+      }
+    },
+    "standardx": {
+      "parser": "@typescript-eslint/parser",
+      "plugins": [
+        "@typescript-eslint/eslint-plugin"
+      ]
+    }
   },
   "nyc": {
     "all": true,

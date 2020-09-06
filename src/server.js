@@ -1,12 +1,12 @@
 const express = require('express')
 
-const config = require('src/config/server')
-const logger = require('src/components/logger')
-const security = require('src/middlewares/security')
-const request = require('src/middlewares/request')
-const response = require('src/middlewares/response')
-const error = require('src/middlewares/error')
-const routes = require('src/routes')
+const config = require('./config/server')
+const logger = require('./logger')
+const security = require('./middlewares/security')
+const request = require('./middlewares/request')
+const response = require('./middlewares/response')
+const error = require('./middlewares/error')
+const routes = require('./routes')
 
 const server = express()
 

@@ -22,8 +22,8 @@
  */
 
 const joi = require('joi')
-const cities = require('src/services/cities')
-const BadRequestError = require('src/errors/bad-request')
+const cities = require('../../services/cities')
+const BadRequestError = require('../../errors/bad-request')
 
 module.exports = (req, res, next) => {
   const { error, value } = schema.validate(req.params)

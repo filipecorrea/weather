@@ -1,6 +1,6 @@
-const cities = require('src/data/cities')
-const City = require('src/models/city')
-const NotFoundError = require('src/errors/not-found')
+const cities = require('../../../data/cities')
+const City = require('../../models/city')
+const NotFoundError = require('../../errors/not-found')
 
 module.exports = id => {
   const city = cities.find(city => city.id === parseInt(id))

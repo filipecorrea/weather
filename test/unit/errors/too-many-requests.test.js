@@ -1,8 +1,8 @@
 const chai = require('chai')
 const expect = chai.expect
 const httpStatus = require('http-status')
-const TooManyRequestsError = require('src/errors/too-many-requests')
-const localization = require('src/localization')
+const TooManyRequestsError = require('../../../src/errors/too-many-requests')
+const localization = require('../../../src/localization')
 
 describe('Errors: Too Many Requests', () => {
   beforeEach(() => {

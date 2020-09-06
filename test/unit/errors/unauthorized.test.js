@@ -1,8 +1,8 @@
 const chai = require('chai')
 const expect = chai.expect
 const httpStatus = require('http-status')
-const UnauthorizedError = require('src/errors/unauthorized')
-const localization = require('src/localization')
+const UnauthorizedError = require('../../../src/errors/unauthorized')
+const localization = require('../../../src/localization')
 
 describe('Errors: Unauthorized', () => {
   beforeEach(() => {

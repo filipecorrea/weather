@@ -1,3 +1,3 @@
-const config = require('src/config/server')
+const config = require('./config/server')
 
-!config.clusterMode ? require('src/server') : require('src/cluster')
+!config.clusterMode ? require('./server') : require('./cluster')

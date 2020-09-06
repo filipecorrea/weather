@@ -1,6 +1,6 @@
 const chai = require('chai')
 const expect = chai.expect
-const Weather = require('src/models/weather')
+const Weather = require('../../../src/models/weather')
 
 describe('Models: Weather', () => {
   beforeEach(() => {

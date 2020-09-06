@@ -1,7 +1,7 @@
 const chai = require('chai')
 const expect = chai.expect
 
-const config = require('src/config')
+const config = require('../../../src/config')
 
 describe('Config', () => {
   it('sets default values for server', () => {

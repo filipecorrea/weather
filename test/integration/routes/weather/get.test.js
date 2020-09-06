@@ -3,8 +3,8 @@ const chaiHttp = require('chai-http')
 chai.use(chaiHttp)
 const expect = chai.expect
 
-const server = require('src/server')
-const cities = require('src/data/cities')
+const server = require('../../../../src/server')
+const cities = require('../../../../data/cities')
 
 describe('Routes: GET cities/{:id}/weather', () => {
   it('returns unauthorized', done => {

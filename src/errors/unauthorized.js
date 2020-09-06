@@ -1,5 +1,5 @@
 const httpStatus = require('http-status')
-const localization = require('src/localization')
+const localization = require('../localization')
 
 class UnauthorizedError extends Error {
   constructor (message) {

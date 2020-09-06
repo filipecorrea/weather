@@ -1,8 +1,8 @@
 const chai = require('chai')
 const expect = chai.expect
 const faker = require('faker')
-const InvalidParameterError = require('src/errors/invalid-parameter')
-const localization = require('src/localization')
+const InvalidParameterError = require('../../../src/errors/invalid-parameter')
+const localization = require('../../../src/localization')
 
 const randomParameter = faker.lorem.word()
 const randomType = faker.lorem.word()

@@ -4,7 +4,7 @@ const expect = chai.expect
 const sinon = require('sinon')
 chai.use(require('sinon-chai'))
 const faker = require('faker')
-const responseMiddleware = require('src/middlewares/response')
+const responseMiddleware = require('../../../src/middlewares/response')
 
 describe('Middlewares: Response', () => {
   beforeEach(() => {

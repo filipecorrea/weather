@@ -1,7 +1,7 @@
 const cluster = require('cluster')
 const os = require('os')
 
-const logger = require('src/components/logger')
+const logger = require('./logger')
 
 if (cluster.isMaster) {
   logger.info('Master started', { pid: process.pid })
@@ -15,5 +15,5 @@ if (cluster.isMaster) {
   })
 } else {
   logger.info('Worker started', { pid: process.pid })
-  require('src/server')
+  require('./server')
 }

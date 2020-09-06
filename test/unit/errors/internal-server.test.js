@@ -1,8 +1,8 @@
 const chai = require('chai')
 const expect = chai.expect
 const httpStatus = require('http-status')
-const InternalServerError = require('src/errors/internal-server')
-const localization = require('src/localization')
+const InternalServerError = require('../../../src/errors/internal-server')
+const localization = require('../../../src/localization')
 
 describe('Errors: Internal Server', () => {
   beforeEach(() => {

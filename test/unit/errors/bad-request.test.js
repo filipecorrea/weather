@@ -1,8 +1,8 @@
 const chai = require('chai')
 const expect = chai.expect
 const httpStatus = require('http-status')
-const BadRequestError = require('src/errors/bad-request')
-const localization = require('src/localization')
+const BadRequestError = require('../../../src/errors/bad-request')
+const localization = require('../../../src/localization')
 
 describe('Errors: Bad Request', () => {
   beforeEach(() => {

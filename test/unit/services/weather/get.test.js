@@ -4,11 +4,11 @@ const expect = chai.expect
 const sinon = require('sinon')
 chai.use(require('sinon-chai'))
 const axios = require('axios')
-const get = require('src/services/weather/get')
-const UnauthorizedError = require('src/errors/unauthorized')
-const NotFoundError = require('src/errors/not-found')
-const TooManyRequestsError = require('src/errors/too-many-requests')
-const InternalServerError = require('src/errors/internal-server')
+const get = require('../../../../src/services/weather/get')
+const UnauthorizedError = require('../../../../src/errors/unauthorized')
+const NotFoundError = require('../../../../src/errors/not-found')
+const TooManyRequestsError = require('../../../../src/errors/too-many-requests')
+const InternalServerError = require('../../../../src/errors/internal-server')
 
 describe('Services: weather get', () => {
   before(() => {

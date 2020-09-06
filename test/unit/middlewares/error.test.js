@@ -5,7 +5,7 @@ const sinon = require('sinon')
 chai.use(require('sinon-chai'))
 const faker = require('faker')
 const httpStatus = require('http-status')
-const errorMiddleware = require('src/middlewares/error')
+const errorMiddleware = require('../../../src/middlewares/error')
 
 describe('Middlewares: Error', () => {
   beforeEach(() => {

@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-expressions */
 const chai = require('chai')
 const expect = chai.expect
-const routes = require('src/routes').api
+const routes = require('../../../../src/routes').api
 const listEndpoints = require('express-list-endpoints')
 
 describe('Routes: Weather', () => {

@@ -1,6 +1,6 @@
 /* eslint-disable no-template-curly-in-string */
 
-const compile = require('src/localization/compile')
+const compile = require('../localization/compile')
 
 module.exports = compile({
   errors: {

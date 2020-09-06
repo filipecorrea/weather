@@ -1,7 +1,7 @@
 const express = require('express')
 const routes = require('requireindex')(__dirname)
 
-const swagger = require('src/routes/swagger')
+const swagger = require('./swagger')
 
 const router = express.Router()
 

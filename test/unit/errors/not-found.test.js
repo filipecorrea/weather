@@ -1,8 +1,8 @@
 const chai = require('chai')
 const expect = chai.expect
 const httpStatus = require('http-status')
-const NotFoundError = require('src/errors/not-found')
-const localization = require('src/localization')
+const NotFoundError = require('../../../src/errors/not-found')
+const localization = require('../../../src/localization')
 
 describe('Errors: Not Found', () => {
   beforeEach(() => {

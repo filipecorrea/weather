@@ -3,7 +3,7 @@
 const chai = require('chai')
 const expect = chai.expect
 const faker = require('faker')
-const compile = require('src/localization/compile')
+const compile = require('../../../src/localization/compile')
 
 const randomName = faker.name.firstName()
 const randomSentence = faker.lorem.sentence()
