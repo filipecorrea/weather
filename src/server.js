@@ -1,11 +1,11 @@
 import express from 'express'
+import security from './middlewares/security'
+import request from './middlewares/request'
+import response from './middlewares/response'
+import error from './middlewares/error'
 
 const config = require('./config/server')
 const logger = require('./logger')
-const security = require('./middlewares/security')
-const request = require('./middlewares/request')
-const response = require('./middlewares/response')
-const error = require('./middlewares/error')
 const routes = require('./routes')
 
 const server = express()

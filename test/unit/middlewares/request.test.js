@@ -1,9 +1,11 @@
 /* eslint-disable no-unused-expressions */
 import chai, { expect } from 'chai'
 import sinon from 'sinon'
+import sinonChai from 'sinon-chai'
 import faker from 'faker'
-chai.use(require('sinon-chai'))
-const requestMiddleware = require('../../../src/middlewares/request')
+import request from '../../../src/middlewares/request'
+
+chai.use(sinonChai)
 
 describe('Middlewares: Request', () => {
   beforeEach(() => {
@@ -15,13 +17,13 @@ describe('Middlewares: Request', () => {
       }
     }
     this.res = {}
-    this.nextStub = sinon.stub()
+    this.next = sinon.stub()
   })
 
   describe('when processing request', () => {
     it('continues the request pipeline', () => {
-      requestMiddleware(this.req, this.res, this.nextStub)
-      expect(this.nextStub).to.have.been.called
+      request(this.req, this.res, this.next)
+      expect(this.next).to.have.been.called
     })
   })
 })

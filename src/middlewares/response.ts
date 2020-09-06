@@ -1,6 +1,7 @@
+import { Request, Response } from 'express'
 const logger = require('../logger')
 
-function response (req, res, next) {
+export default function response (req: Request, res: Response, next: Function) {
   const body = res.locals.constructor === Array || Object.keys(res.locals).length > 0
     ? res.locals
     : undefined
@@ -9,5 +10,3 @@ function response (req, res, next) {
 
   logger.info('Response', { res: { statusCode: res.statusCode, body } })
 }
-
-module.exports = response

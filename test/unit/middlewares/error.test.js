@@ -1,45 +1,47 @@
 /* eslint-disable no-unused-expressions */
 import chai, { expect } from 'chai'
-import httpStatus from 'http-status'
 import sinon from 'sinon'
+import sinonChai from 'sinon-chai'
 import faker from 'faker'
-chai.use(require('sinon-chai'))
-const errorMiddleware = require('../../../src/middlewares/error')
+import status from 'http-status'
+import error from '../../../src/middlewares/error'
+
+chai.use(sinonChai)
 
 describe('Middlewares: Error', () => {
   beforeEach(() => {
-    this.error = {
+    this.err = {
       name: faker.lorem.word(),
       description: faker.lorem.sentence()
     }
     this.res = {}
-    this.nextStub = sinon.stub()
+    this.next = sinon.stub()
   })
 
   describe('when processing a known error', () => {
     it('sets response with error status code', () => {
-      this.error.statusCode = httpStatus.NOT_FOUND
-      errorMiddleware(this.error, null, this.res, this.nextStub)
-      expect(this.res.statusCode).to.equal(this.error.statusCode)
+      this.err.statusCode = status.NOT_FOUND
+      error(this.err, null, this.res, this.next)
+      expect(this.res.statusCode).to.equal(this.err.statusCode)
     })
     it('sets error output content', () => {
-      errorMiddleware(this.error, null, this.res, this.nextStub)
-      expect(this.res.locals).to.deep.equal(this.error)
+      error(this.err, null, this.res, this.next)
+      expect(this.res.locals).to.deep.equal(this.err)
     })
     it('continues the request pipeline', () => {
-      errorMiddleware(this.error, null, this.res, this.nextStub)
-      expect(this.nextStub).to.have.been.called
+      error(this.err, null, this.res, this.next)
+      expect(this.next).to.have.been.called
     })
   })
 
   describe('when processing an unknown error', () => {
     it('sets response status code to internal server error', () => {
-      errorMiddleware(this.error, null, this.res, this.nextStub)
-      expect(this.res.statusCode).to.equal(httpStatus.INTERNAL_SERVER_ERROR)
+      error(this.err, null, this.res, this.next)
+      expect(this.res.statusCode).to.equal(status.INTERNAL_SERVER_ERROR)
     })
     it('continues the request pipeline', () => {
-      errorMiddleware(this.error, null, this.res, this.nextStub)
-      expect(this.nextStub).to.have.been.called
+      error(this.err, null, this.res, this.next)
+      expect(this.next).to.have.been.called
     })
   })
 })

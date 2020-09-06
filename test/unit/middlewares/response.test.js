@@ -1,9 +1,11 @@
 /* eslint-disable no-unused-expressions */
 import chai, { expect } from 'chai'
 import sinon from 'sinon'
+import sinonChai from 'sinon-chai'
 import faker from 'faker'
-chai.use(require('sinon-chai'))
-const responseMiddleware = require('../../../src/middlewares/response')
+import response from '../../../src/middlewares/response'
+
+chai.use(sinonChai)
 
 describe('Middlewares: Response', () => {
   beforeEach(() => {
@@ -15,16 +17,16 @@ describe('Middlewares: Response', () => {
       },
       send: sinon.spy()
     }
-    this.nextStub = sinon.stub()
+    this.next = sinon.stub()
   })
 
   describe('when processing response with data', () => {
     it('doesn\'t continues the request pipeline', () => {
-      responseMiddleware(null, this.res, this.nextStub)
-      expect(this.nextStub).to.not.have.been.called
+      response(null, this.res, this.next)
+      expect(this.next).to.not.have.been.called
     })
     it('responds the request', () => {
-      responseMiddleware(null, this.res, this.nextStub)
+      response(null, this.res, this.next)
       expect(this.res.send).to.have.been.called
     })
   })
@@ -32,11 +34,11 @@ describe('Middlewares: Response', () => {
   describe('when processing response without data', () => {
     it('doesn\'t continues the request pipeline', () => {
       this.res.locals = {}
-      responseMiddleware(null, this.res, this.nextStub)
-      expect(this.nextStub).to.not.have.been.called
+      response(null, this.res, this.next)
+      expect(this.next).to.not.have.been.called
     })
     it('responds the request', () => {
-      responseMiddleware(null, this.res, this.nextStub)
+      response(null, this.res, this.next)
       expect(this.res.send).to.have.been.called
     })
   })
