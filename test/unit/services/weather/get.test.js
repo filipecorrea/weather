@@ -1,24 +1,21 @@
 /* eslint-disable no-unused-expressions */
 import chai, { expect } from 'chai'
 import sinon from 'sinon'
+import sinonChai from 'sinon-chai'
 import axios from 'axios'
+import get from '../../../../src/services/weather/get'
 import UnauthorizedError from '../../../../src/errors/unauthorized'
 import NotFoundError from '../../../../src/errors/not-found'
 import TooManyRequestsError from '../../../../src/errors/too-many-requests'
 import InternalServerError from '../../../../src/errors/internal-server'
 
-const get = require('../../../../src/services/weather/get')
-
-chai.use(require('sinon-chai'))
-
-let getWeatherServiceStub
-let mockedAPIResponse
-let expectedResponse
+chai.use(sinonChai)
 
 describe('Services: weather get', () => {
-  before(() => {
-    getWeatherServiceStub = sinon.stub(axios, 'get')
-  })
+  const openWeatherServiceStub = sinon.stub(axios, 'get')
+
+  let mockedAPIResponse
+  let expectedResponse
 
   describe('when the request is successful', () => {
     beforeEach(async () => {
@@ -72,7 +69,7 @@ describe('Services: weather get', () => {
         wind_speed: 1.5
       }
 
-      getWeatherServiceStub.returns(Promise.resolve(mockedAPIResponse))
+      openWeatherServiceStub.returns(Promise.resolve(mockedAPIResponse))
     })
 
     it('returns expected response', async () => {
@@ -84,25 +81,25 @@ describe('Services: weather get', () => {
   describe('when the request is not successful', () => {
     it('throws unauthorized error', async () => {
       mockedAPIResponse = { response: { data: { cod: 401 } } }
-      getWeatherServiceStub.returns(Promise.reject(mockedAPIResponse))
+      openWeatherServiceStub.returns(Promise.reject(mockedAPIResponse))
       get(2873891).catch(error => expect(typeof error).to.be.equal(UnauthorizedError))
     })
 
     it('throws not found error', async () => {
       mockedAPIResponse = { response: { data: { cod: 404 } } }
-      getWeatherServiceStub.returns(Promise.reject(mockedAPIResponse))
+      openWeatherServiceStub.returns(Promise.reject(mockedAPIResponse))
       get(2873891).catch(error => expect(typeof error).to.be.equal(NotFoundError))
     })
 
     it('throws too many requests error', async () => {
       mockedAPIResponse = { response: { data: { cod: 429 } } }
-      getWeatherServiceStub.returns(Promise.reject(mockedAPIResponse))
+      openWeatherServiceStub.returns(Promise.reject(mockedAPIResponse))
       get(2873891).catch(error => expect(typeof error).to.be.equal(TooManyRequestsError))
     })
 
     it('throws internal server error', async () => {
       mockedAPIResponse = { response: { data: { cod: 500 } } }
-      getWeatherServiceStub.returns(Promise.reject(mockedAPIResponse))
+      openWeatherServiceStub.returns(Promise.reject(mockedAPIResponse))
       get(2873891).catch(error => expect(typeof error).to.be.equal(InternalServerError))
     })
   })

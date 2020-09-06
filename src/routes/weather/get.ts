@@ -23,9 +23,8 @@
 
 import { Request, Response } from 'express'
 import joi from 'joi'
+import weather from '../../services/weather'
 import BadRequestError from '../../errors/bad-request'
-
-const weather = require('../../services/weather')
 
 const schema = joi.object({
   id: joi.number().integer().min(1).required()

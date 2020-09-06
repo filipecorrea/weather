@@ -1,8 +1,9 @@
-import cities from '../../../data/cities'
 import City from '../../models/city'
 import NotFoundError from '../../errors/not-found'
 
-module.exports = id => {
+const cities = require('../../../data/cities')
+
+export default id => {
   const city = cities.find(city => city.id === parseInt(id))
 
   if (!city) throw new NotFoundError()

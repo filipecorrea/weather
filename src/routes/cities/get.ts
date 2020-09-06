@@ -23,9 +23,8 @@
 
 import { Request, Response } from 'express'
 import joi from 'joi'
+import cities from '../../services/cities'
 import BadRequestError from '../../errors/bad-request'
-
-const cities = require('../../services/cities')
 
 const schema = joi.object({
   id: joi.number().integer().min(1).required()

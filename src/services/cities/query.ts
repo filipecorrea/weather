@@ -1,7 +1,8 @@
 import { getDistance } from 'geolib'
-import cities from '../../../data/cities'
 
-module.exports = (latitude, longitude) => {
+const cities = require('../../../data/cities')
+
+export default (latitude, longitude) => {
   const origin = { latitude, longitude }
   const radius = 10000 // 10 kilometers
 

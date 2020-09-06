@@ -6,7 +6,7 @@ import NotFoundError from '../../errors/not-found'
 import TooManyRequestsError from '../../errors/too-many-requests'
 import InternalServerError from '../../errors/internal-server'
 
-module.exports = id => {
+export default id => {
   return axios
     .get(config.openweatherAPI, { params: { id, appid: config.openweatherAPIKey } })
     .then(response => {

@@ -13,12 +13,12 @@ describe('Routes: GET cities/{:id}', () => {
   beforeEach(() => {
     this.req = { params: { id: cities[0].id } }
     this.res = {}
-    this.nextStub = sinon.stub()
+    this.next = sinon.stub()
   })
 
   describe('when the request is successful', () => {
     beforeEach(() => {
-      return get(this.req, this.res, this.nextStub)
+      return get(this.req, this.res, this.next)
     })
 
     it('sets res.locals to expected response', () => {
@@ -31,24 +31,24 @@ describe('Routes: GET cities/{:id}', () => {
     })
 
     it('continues the request pipeline', () => {
-      expect(this.nextStub).to.have.been.called
+      expect(this.next).to.have.been.called
     })
   })
 
   describe('when the request is not successful', () => {
     it('throws bad request error when missing id', () => {
       this.req = { params: {} }
-      expect(() => get(this.req, this.res, this.nextStub)).to.throw(BadRequestError)
+      expect(() => get(this.req, this.res, this.next)).to.throw(BadRequestError)
     })
 
     it('throws bad request error when id is invalid', () => {
       this.req = { params: { id: 0 } }
-      expect(() => get(this.req, this.res, this.nextStub)).to.throw(BadRequestError)
+      expect(() => get(this.req, this.res, this.next)).to.throw(BadRequestError)
     })
 
     it('throws not found error', () => {
       this.req = { params: { id: 1 } }
-      expect(() => get(this.req, this.res, this.nextStub)).to.throw(NotFoundError)
+      expect(() => get(this.req, this.res, this.next)).to.throw(NotFoundError)
     })
   })
 })

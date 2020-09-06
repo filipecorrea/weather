@@ -31,9 +31,8 @@
 
 import { Request, Response } from 'express'
 import joi from 'joi'
+import cities from '../../services/cities'
 import BadRequestError from '../../errors/bad-request'
-
-const cities = require('../../services/cities')
 
 const schema = joi.object({
   lat: joi.number().min(-90).max(90).required(),
