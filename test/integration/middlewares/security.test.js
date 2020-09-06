@@ -1,12 +1,12 @@
 import chai, { expect } from 'chai'
-
 import chaiHttp from 'chai-http'
+import server from '../../../src/server'
+
 chai.use(chaiHttp)
 
-const server = require('../../../src/server')
-let headers
-
 describe('Security Headers', () => {
+  let headers
+
   before(done => {
     chai.request(server)
       .get('/')

@@ -14,5 +14,5 @@ if (cluster.isMaster) {
   })
 } else {
   logger.info('Worker started', { pid: process.pid })
-  require('./server')
+  import('./server')
 }

@@ -1,10 +1,9 @@
 import chai, { expect } from 'chai'
 import chaiHttp from 'chai-http'
 import cities from '../../../../data/cities'
+import server from '../../../../src/server'
 
 chai.use(chaiHttp)
-
-const server = require('../../../../src/server')
 
 describe('Routes: GET cities', () => {
   it('returns cities', done => {

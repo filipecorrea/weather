@@ -20,4 +20,4 @@ server.use(response)
 
 server.listen(config.port, logger.info('Server started', { pid: process.pid }))
 
-module.exports = server
+export default server
