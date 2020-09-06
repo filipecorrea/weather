@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-const logger = require('../logger')
+import logger from '../logger'
 
 export default function request (req: Request, res: Response, next: Function) {
   logger.info('Request', {

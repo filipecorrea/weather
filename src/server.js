@@ -4,8 +4,8 @@ import request from './middlewares/request'
 import response from './middlewares/response'
 import error from './middlewares/error'
 import config from './config/server'
+import logger from './logger'
 
-const logger = require('./logger')
 const routes = require('./routes')
 
 const server = express()

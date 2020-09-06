@@ -1,7 +1,6 @@
 import cluster from 'cluster'
 import os from 'os'
-
-const logger = require('./logger')
+import logger from './logger'
 
 if (cluster.isMaster) {
   logger.info('Master started', { pid: process.pid })

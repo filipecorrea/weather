@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-const logger = require('../logger')
+import logger from '../logger'
 
 export default function response (req: Request, res: Response, next: Function) {
   const body = res.locals.constructor === Array || Object.keys(res.locals).length > 0

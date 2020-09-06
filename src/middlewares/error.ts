@@ -1,6 +1,6 @@
 import { Request, Response } from 'express'
 import status from 'http-status'
-const logger = require('../logger')
+import logger from '../logger'
 
 export default function error (err, req: Request, res: Response, next: Function) {
   const unknownError = !err.statusCode
