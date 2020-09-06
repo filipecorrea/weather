@@ -19,4 +19,4 @@ const config = {
   openweatherAPIKey: env.OPENWEATHER_API_KEY
 }
 
-module.exports = config
+export default config

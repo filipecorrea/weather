@@ -1,6 +1,5 @@
 import { expect } from 'chai'
-
-const config = require('../../../src/config')
+import * as config from '../../../src/config'
 
 describe('Config', () => {
   it('sets default values for server', () => {

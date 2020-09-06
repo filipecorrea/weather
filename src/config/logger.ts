@@ -43,4 +43,4 @@ const config = {
   maxFiles: env.LOG_MAX_FILES
 }
 
-module.exports = config
+export default config

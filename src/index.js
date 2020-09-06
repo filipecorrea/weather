@@ -1,3 +1,3 @@
-const config = require('./config/server')
+import config from './config/server'
 
 !config.clusterMode ? require('./server') : require('./cluster')

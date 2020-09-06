@@ -3,8 +3,8 @@ import security from './middlewares/security'
 import request from './middlewares/request'
 import response from './middlewares/response'
 import error from './middlewares/error'
+import config from './config/server'
 
-const config = require('./config/server')
 const logger = require('./logger')
 const routes = require('./routes')
 

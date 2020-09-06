@@ -26,4 +26,4 @@ const config = {
   port: env.PORT
 }
 
-module.exports = config
+export default config

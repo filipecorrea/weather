@@ -1,11 +1,10 @@
 import axios from 'axios'
+import config from '../../config/keys'
 import Weather from '../../models/weather'
 import UnauthorizedError from '../../errors/unauthorized'
 import NotFoundError from '../../errors/not-found'
 import TooManyRequestsError from '../../errors/too-many-requests'
 import InternalServerError from '../../errors/internal-server'
-
-const config = require('../../config/keys')
 
 module.exports = id => {
   return axios
