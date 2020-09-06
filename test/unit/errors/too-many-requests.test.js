@@ -1,8 +1,8 @@
 import { expect } from 'chai'
-
 import httpStatus from 'http-status'
+import localization from '../../../src/localization'
+
 const TooManyRequestsError = require('../../../src/errors/too-many-requests')
-const localization = require('../../../src/localization')
 
 describe('Errors: Too Many Requests', () => {
   beforeEach(() => {

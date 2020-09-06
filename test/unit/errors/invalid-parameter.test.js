@@ -1,8 +1,8 @@
 import { expect } from 'chai'
-
 import faker from 'faker'
+import localization from '../../../src/localization'
+
 const InvalidParameterError = require('../../../src/errors/invalid-parameter')
-const localization = require('../../../src/localization')
 
 const randomParameter = faker.lorem.word()
 const randomType = faker.lorem.word()

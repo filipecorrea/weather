@@ -1,6 +1,5 @@
 import { expect } from 'chai'
-
-const Weather = require('../../../src/models/weather')
+import Weather from '../../../src/models/weather'
 
 describe('Models: Weather', () => {
   beforeEach(() => {

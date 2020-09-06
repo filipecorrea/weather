@@ -1,6 +1,6 @@
 import _ from 'lodash'
 
-function compile (templateHash) {
+export default function compile (templateHash) {
   return Object.keys(templateHash)
     .map((name) => {
       const value = templateHash[name]
@@ -13,5 +13,3 @@ function compile (templateHash) {
       return compiled
     }, {})
 }
-
-module.exports = compile

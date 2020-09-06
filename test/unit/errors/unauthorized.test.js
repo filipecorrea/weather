@@ -1,8 +1,8 @@
 import { expect } from 'chai'
-
 import httpStatus from 'http-status'
+import localization from '../../../src/localization'
+
 const UnauthorizedError = require('../../../src/errors/unauthorized')
-const localization = require('../../../src/localization')
 
 describe('Errors: Unauthorized', () => {
   beforeEach(() => {

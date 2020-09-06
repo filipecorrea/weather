@@ -1,8 +1,7 @@
 /* eslint-disable no-template-curly-in-string */
+import compile from './compile'
 
-const compile = require('../localization/compile')
-
-module.exports = compile({
+const localization = compile({
   errors: {
     badRequest: 'Bad request',
     unauthorized: 'Unauthorized',
@@ -13,3 +12,5 @@ module.exports = compile({
     internalServer: 'Internal server error'
   }
 })
+
+export default localization

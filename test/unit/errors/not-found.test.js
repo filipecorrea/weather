@@ -1,8 +1,8 @@
 import { expect } from 'chai'
-
 import httpStatus from 'http-status'
+import localization from '../../../src/localization'
+
 const NotFoundError = require('../../../src/errors/not-found')
-const localization = require('../../../src/localization')
 
 describe('Errors: Not Found', () => {
   beforeEach(() => {

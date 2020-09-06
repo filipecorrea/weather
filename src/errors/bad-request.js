@@ -1,5 +1,5 @@
 import httpStatus from 'http-status'
-const localization = require('../localization')
+import localization from '../localization'
 
 class BadRequestError extends Error {
   constructor (message) {
