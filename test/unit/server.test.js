@@ -1,7 +1,5 @@
-const chai = require('chai')
-const server = require('src/server')
-
-const expect = chai.expect
+import { expect } from 'chai'
+import server from '../../src/server'
 
 describe('Server', () => {
   it('enables JSON parser middleware', () => {

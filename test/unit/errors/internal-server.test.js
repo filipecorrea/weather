@@ -1,9 +1,7 @@
-const chai = require('chai')
-const status = require('http-status')
-const localization = require('src/localization')
-const InternalServerError = require('src/errors/internal-server')
-
-const expect = chai.expect
+import { expect } from 'chai'
+import status from 'http-status'
+import localization from '../../../src/localization'
+import InternalServerError from '../../../src/errors/internal-server'
 
 describe('Errors: Internal Server', () => {
   const error = new InternalServerError()

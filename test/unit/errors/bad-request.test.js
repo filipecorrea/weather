@@ -1,9 +1,7 @@
-const chai = require('chai')
-const status = require('http-status')
-const localization = require('src/localization')
-const BadRequestError = require('src/errors/bad-request')
-
-const expect = chai.expect
+import { expect } from 'chai'
+import status from 'http-status'
+import localization from '../../../src/localization'
+import BadRequestError from '../../../src/errors/bad-request'
 
 describe('Errors: Bad Request', () => {
   const error = new BadRequestError()

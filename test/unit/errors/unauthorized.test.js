@@ -1,9 +1,7 @@
-const chai = require('chai')
-const status = require('http-status')
-const localization = require('src/localization')
-const UnauthorizedError = require('src/errors/unauthorized')
-
-const expect = chai.expect
+import { expect } from 'chai'
+import status from 'http-status'
+import localization from '../../../src/localization'
+import UnauthorizedError from '../../../src/errors/unauthorized'
 
 describe('Errors: Unauthorized', () => {
   const error = new UnauthorizedError()

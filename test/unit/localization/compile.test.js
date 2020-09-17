@@ -1,9 +1,7 @@
 /* eslint-disable no-template-curly-in-string */
-const chai = require('chai')
-const faker = require('faker')
-const compile = require('src/localization/compile')
-
-const expect = chai.expect
+import { expect } from 'chai'
+import faker from 'faker'
+import compile from '../../../src/localization/compile'
 
 const randomName = faker.name.firstName()
 const randomSentence = faker.lorem.sentence()

@@ -1,71 +1,75 @@
 /* eslint-disable no-unused-expressions */
-const chai = require('chai')
-const expect = chai.expect
-const sinon = require('sinon')
-chai.use(require('sinon-chai'))
-const cities = require('data/cities')
-const weather = require('src/services/weather')
-const get = require('src/routes/weather/get')
-const BadRequestError = require('src/errors/bad-request')
-const NotFoundError = require('src/errors/not-found')
+import chai, { expect } from 'chai'
+import sinon from 'sinon'
+import sinonChai from 'sinon-chai'
+import cities from '../../../../data/cities'
+import get from '../../../../src/routes/weather/get'
+import weatherService from '../../../../src/services/weather'
+import BadRequestError from '../../../../src/errors/bad-request'
+import NotFoundError from '../../../../src/errors/not-found'
+
+chai.use(sinonChai)
 
 describe('Routes: GET cities/{:id}/weather', () => {
-  this.getWeatherServiceStub = sinon.stub(weather, 'get')
+  const weatherServiceStub = sinon.stub(weatherService, 'get')
+
+  const mockedData = {
+    type: 'Clouds',
+    type_description: 'broken clouds',
+    sunrise: 1599281303,
+    sunset: 1599328893,
+    temp: 295.63,
+    temp_min: 295.15,
+    temp_max: 295.93,
+    pressure: 1018,
+    humidity: 56,
+    clouds_percent: 75,
+    wind_speed: 2.6
+  }
+
+  let req
+  let res
+  let next
 
   beforeEach(() => {
-    this.req = { params: { id: cities[0].id } }
-    this.res = {}
-    this.nextStub = sinon.stub()
+    req = { params: { id: cities[0].id } }
+    res = {}
+    next = sinon.stub()
   })
 
   describe('when the request is successful', () => {
     beforeEach(async () => {
-      this.mockedData = {
-        type: 'Clouds',
-        type_description: 'broken clouds',
-        sunrise: 1599281303,
-        sunset: 1599328893,
-        temp: 295.63,
-        temp_min: 295.15,
-        temp_max: 295.93,
-        pressure: 1018,
-        humidity: 56,
-        clouds_percent: 75,
-        wind_speed: 2.6
-      }
-      this.getWeatherServiceStub.returns(Promise.resolve(this.mockedData))
-
-      return await get(this.req, this.res, this.nextStub)
+      weatherServiceStub.returns(Promise.resolve(mockedData))
+      return await get(req, res, next)
     })
 
     it('sets res.locals to expected response', () => {
-      expect(this.res.locals).to.be.deep.equal(this.mockedData)
-      expect(this.nextStub).to.have.been.called
+      expect(res.locals).to.be.deep.equal(mockedData)
+      expect(next).to.have.been.called
     })
   })
 
   describe('when the request is not successful', () => {
     it('throws bad request error when missing id', () => {
-      this.req = { params: {} }
-      expect(() => get(this.req, this.res, this.nextStub)).to.throw(BadRequestError)
+      req = { params: {} }
+      expect(() => get(req, res, next)).to.throw(BadRequestError)
     })
 
     it('throws bad request error when id is invalid', () => {
-      this.req = { params: { id: 0 } }
-      expect(() => get(this.req, this.res, this.nextStub)).to.throw(BadRequestError)
+      req = { params: { id: 0 } }
+      expect(() => get(req, res, next)).to.throw(BadRequestError)
     })
   })
 
   describe('when the service response is not successful', () => {
     beforeEach(async () => {
-      this.getWeatherServiceStub.returns(Promise.reject(new NotFoundError()))
-
-      return await get(this.req, this.res, this.nextStub)
+      weatherServiceStub.returns(Promise.reject(new NotFoundError()))
+      return await get(req, res, next)
     })
 
     it('throws not found error', () => {
-      expect(this.res.locals).to.be.undefined
-      expect(this.nextStub).to.have.been.called
+      expect(res.locals).to.be.undefined
+      expect(next).to.have.been.called
     })
   })
 })

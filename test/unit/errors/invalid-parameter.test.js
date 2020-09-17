@@ -1,10 +1,8 @@
-const chai = require('chai')
-const status = require('http-status')
-const faker = require('faker')
-const localization = require('src/localization')
-const InvalidParameterError = require('src/errors/invalid-parameter')
-
-const expect = chai.expect
+import { expect } from 'chai'
+import status from 'http-status'
+import faker from 'faker'
+import localization from '../../../src/localization'
+import InvalidParameterError from '../../../src/errors/invalid-parameter'
 
 const randomParameter = faker.lorem.word()
 const randomType = faker.lorem.word()

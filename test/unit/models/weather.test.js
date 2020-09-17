@@ -1,8 +1,6 @@
-const chai = require('chai')
-const faker = require('faker')
-const Weather = require('src/models/weather')
-
-const expect = chai.expect
+import { expect } from 'chai'
+import faker from 'faker'
+import Weather from '../../../src/models/weather'
 
 describe('Models: Weather', () => {
   const mockedData = {

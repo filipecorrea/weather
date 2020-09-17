@@ -1,9 +1,7 @@
-const chai = require('chai')
-const chaiHttp = require('chai-http')
-const cities = require('data/cities')
-const server = require('src/server')
-
-const expect = chai.expect
+import chai, { expect } from 'chai'
+import chaiHttp from 'chai-http'
+import cities from '../../../../data/cities'
+import server from '../../../../src/server'
 
 chai.use(chaiHttp)
 

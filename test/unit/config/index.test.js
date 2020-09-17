@@ -1,7 +1,5 @@
-const chai = require('chai')
-const config = require('src/config')
-
-const expect = chai.expect
+import { expect } from 'chai'
+import * as config from '../../../src/config'
 
 describe('Config', () => {
   it('sets default values for server', () => {

@@ -1,9 +1,7 @@
-const chai = require('chai')
-const status = require('http-status')
-const localization = require('src/localization')
-const TooManyRequestsError = require('src/errors/too-many-requests')
-
-const expect = chai.expect
+import { expect } from 'chai'
+import status from 'http-status'
+import localization from '../../../src/localization'
+import TooManyRequestsError from '../../../src/errors/too-many-requests'
 
 describe('Errors: Too Many Requests', () => {
   const error = new TooManyRequestsError()

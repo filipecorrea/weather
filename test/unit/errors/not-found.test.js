@@ -1,9 +1,7 @@
-const chai = require('chai')
-const status = require('http-status')
-const localization = require('src/localization')
-const NotFoundError = require('src/errors/not-found')
-
-const expect = chai.expect
+import { expect } from 'chai'
+import status from 'http-status'
+import localization from '../../../src/localization'
+import NotFoundError from '../../../src/errors/not-found'
 
 describe('Errors: Not Found', () => {
   const error = new NotFoundError()

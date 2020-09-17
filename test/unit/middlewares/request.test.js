@@ -1,10 +1,9 @@
 /* eslint-disable no-unused-expressions */
-const chai = require('chai')
-const expect = chai.expect
-const sinon = require('sinon')
-const sinonChai = require('sinon-chai')
-const faker = require('faker')
-const requestMiddleware = require('src/middlewares/request')
+import chai, { expect } from 'chai'
+import sinon from 'sinon'
+import sinonChai from 'sinon-chai'
+import faker from 'faker'
+import request from '../../../src/middlewares/request'
 
 chai.use(sinonChai)
 
@@ -23,7 +22,7 @@ describe('Middlewares: Request', () => {
 
   describe('when processing request', () => {
     it('continues the request pipeline', () => {
-      requestMiddleware(this.req, this.res, this.next)
+      request(this.req, this.res, this.next)
       expect(this.next).to.have.been.called
     })
   })
