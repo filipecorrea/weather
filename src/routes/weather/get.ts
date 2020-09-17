@@ -9,7 +9,7 @@
  *        - in: path
  *          name: id
  *          schema:
- *            type: string
+ *            type: number
  *          required: true
  *          description: City id
  *      responses:
