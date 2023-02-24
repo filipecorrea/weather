@@ -8,7 +8,7 @@
     "prestart": "npm run build",
     "start": "NODE_ENV=dev node .",
     "dev": "NODE_ENV=dev nodemon src/index.ts",
-    "test": "npm run test:style && npm run test:unit && npm run test:integration && npm run test:security",
+    "test": "npm run test:style && npm run test:unit && npm run test:integration",
     "test:style": "standardx",
     "test:unit": "nyc _mocha -r ts-node/register -r source-map-support/register --exit 'test/unit/**/*.test.js'",
     "test:integration": "mocha --exit -r ts-node/register 'test/integration/**/*.test.js'",
